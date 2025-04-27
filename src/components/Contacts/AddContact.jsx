@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import  {Contact}  from "./Contact";
 
-import Spinner  from "../Loader";
+
 import { COMMENT, GREEN, PURPLE } from "../../helpers/colors";
+import Loader from "../Loader";
 
 const AddContact = ({
-  loading,
+  isloading,
   contact,
   setContactInfo,
   groups,
@@ -12,8 +14,8 @@ const AddContact = ({
 }) => {
   return (
     <>
-      {loading ? (
-        <Spinner />
+      {isloading ? (
+        <Loader />
       ) : (
         <>
           <section className="p-3">
@@ -48,7 +50,7 @@ const AddContact = ({
                       <input
                         name="fullname"
                         type="text"
-                        value={contact.fullname}
+                        value={Contact.fullname}
                         onChange={setContactInfo}
                         className="form-control"
                         placeholder="نام و نام خانوادگی"
@@ -59,7 +61,7 @@ const AddContact = ({
                       <input
                         name="photo"
                         type="text"
-                        value={contact.photo}
+                        value={Contact.photo}
                         onChange={setContactInfo}
                         className="form-control"
                         required={true}
@@ -70,7 +72,7 @@ const AddContact = ({
                       <input
                         name="mobile"
                         type="number"
-                        value={contact.mobile}
+                        value={Contact.mobile}
                         onChange={setContactInfo}
                         className="form-control"
                         required={true}
@@ -81,7 +83,7 @@ const AddContact = ({
                       <input
                         type="email"
                         name="email"
-                        value={contact.email}
+                        value={Contact.email}
                         onChange={setContactInfo}
                         className="form-control"
                         required={true}
@@ -92,30 +94,14 @@ const AddContact = ({
                       <input
                         type="text"
                         name="job"
-                        value={contact.job}
+                        value={Contact.job}
                         onChange={setContactInfo}
                         className="form-control"
                         required={true}
                         placeholder="شغل"
                       />
                     </div>
-                    <div className="mb-2">
-                      <select
-                        name="group"
-                        value={contact.group}
-                        onChange={setContactInfo}
-                        required={true}
-                        className="form-control"
-                      >
-                        <option value="">انتخاب گروه</option>
-                        {groups.length > 0 &&
-                          groups.map((group) => (
-                            <option key={group.id} value={group.id}>
-                              {group.name}
-                            </option>
-                          ))}
-                      </select>
-                    </div>
+                   
                     <div className="mx-2">
                       <input
                         type="submit"

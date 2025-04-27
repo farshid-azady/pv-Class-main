@@ -39,12 +39,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Navigate  to="/contacts" />} />
         <Route path="/contacts" element={<Contacts contacts={contacts} isloading={isloading} />} />
-        <Route path="/contacts/add" element={<AddContact />} />
+        <Route path="/contacts/add" element={<AddContact isloading={isloading}  />} />
         <Route path="/contacts/:id" element={<ViewContact />} />
         <Route path="/contacts/edit/:id" element={<EditContact />} />
         
       </Routes>
-      {/* <Contacts contacts={contacts} isloading={isloading} /> */}
+      
       <p>testing</p>
     </div>
   );
