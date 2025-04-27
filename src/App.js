@@ -1,6 +1,6 @@
 import './App.css';
 import {NavBar} from './components/NavBar';
-import {AddContact} from './components/Contacts/AddContact';
+import AddContact from './components/Contacts/AddContact';
 import {Contacts} from './components/Contacts/Contacts';
 import ViewContact from './components/Contacts/ViewContact';
 import EditContact from './components/Contacts/EditContact';
