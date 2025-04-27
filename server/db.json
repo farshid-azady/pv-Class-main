@@ -1,0 +1,44 @@
+{
+  "contacts": [
+    {
+      "id": "3a5c",
+      "fullname": "فرشید آزادی",
+      "photo": "https://media.istockphoto.com/id/1444291518/photo/black-woman-working-from-home-office.jpg?b=1&s=612x612&w=0&k=20&c=U7i_Zhk7BuNqPpceKZbbzlGCuqn4P70mW6mRaRgnB20=",
+      "mobile": "09197280245",
+      "email": "mcpd.developer@gmail.com",
+      "job": "programmer",
+      "group": "1"
+    },
+    {
+      "id": "6073",
+      "fullname": "ککو آزادی",
+      "photo": "https://media.istockphoto.com/id/1416048929/photo/woman-working-on-laptop-online-checking-emails-and-planning-on-the-internet-while-sitting-in.jpg?b=1&s=612x612&w=0&k=20&c=aLm7LvcUVsB1sZMMzHhfktuVTXH-tOt2kGuxuM60PL0=",
+      "mobile": "09125226523",
+      "email": "keko@gmail.com",
+      "job": "doctor",
+      "group": "2"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "همکار"
+    },
+    {
+      "id": "2",
+      "name": "دوست"
+    },
+    {
+      "id": "3",
+      "name": "فامیل"
+    },
+    {
+      "id": "4",
+      "name": "آشنا"
+    },
+    {
+      "id": "5",
+      "name": "سرویس"
+    }
+  ]
+}

@@ -24,7 +24,7 @@ export const Contacts = ({ contacts,isloading}) => {
             </section>
             {isloading?<Loader/>: <section className="container">
                 <div className="row">
-                    {contacts.length>0?contacts.map(contact=> <Contact key={contact.id}/>):(
+                    {contacts.length>0?contacts.map(contact=> <Contact key={contact.id} contact={contact}/>):(
 
                         <div className="text-center py-5" style={{backgroundColor:CURRENTLINE}}>
                             <p className="h3" style={{color:ORANGE}}>

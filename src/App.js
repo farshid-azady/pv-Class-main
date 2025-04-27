@@ -1,16 +1,49 @@
 import './App.css';
 import {NavBar} from './components/NavBar';
+import {AddContact} from './components/Contacts/AddContact';
 import {Contacts} from './components/Contacts/Contacts';
-import {useState} from 'react';
+import ViewContact from './components/Contacts/ViewContact';
+import EditContact from './components/Contacts/EditContact';
+
+import {useState,useEffect} from 'react';
+import {Route, Routes, Navigate} from 'react-router-dom';
+import axios from 'axios';
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
   const [isloading, setIsLoading] = useState(true);
+  const[groups,setGroups]=useState([])
 
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        setIsLoading(true);
+        const {data:contactsData} = await axios.get('http://localhost:3001/contacts');
+        const {data:groupsData} = await axios.get('http://localhost:3001/groups');
+        setContacts(contactsData);
+        setGroups(groupsData);
+        setIsLoading(false);
+       
+      } catch (error) {
+        console.error('Error fetching contacts:', error);
+        setIsLoading(false);
+      }
+    };
+    fetchContacts();
+  }, []);
+      
   return (
     <div className="App">
       <NavBar />
-      <Contacts contacts={contacts} isloading={isloading} />
+      <Routes>
+        <Route path="/" element={<Navigate  to="/contacts" />} />
+        <Route path="/contacts" element={<Contacts contacts={contacts} isloading={isloading} />} />
+        <Route path="/contacts/add" element={<AddContact />} />
+        <Route path="/contacts/:id" element={<ViewContact />} />
+        <Route path="/contacts/edit/:id" element={<EditContact />} />
+        
+      </Routes>
+      {/* <Contacts contacts={contacts} isloading={isloading} /> */}
       <p>testing</p>
     </div>
   );
