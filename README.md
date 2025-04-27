@@ -30,28 +30,18 @@ all fonts are in fonts folder at public folder.
 
 ## Learn More
 
-
+/**
+ * Asynchronously fetches contact information by ID.
+ * 
+ * This function sends an HTTP GET request to the server to retrieve detailed information of a specific contact based on the contact's ID.
+ * It utilizes the axios library for making the HTTP request, and the request is asynchronous, allowing the use of `await` for easier result handling.
+ * 
+ * @param {string} id - The unique identifier of the contact. It is used to specify which contact's information needs to be retrieved.
+ * @returns {Promise<Object>} Returns a promise that resolves to the data object containing the contact information.
+ * 
+ * Note: The function assumes that the `SERVER_URL` constant is defined elsewhere and contains the base URL of the server.
+ */
 ### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # pv-Class

@@ -8,6 +8,7 @@ import EditContact from './components/Contacts/EditContact';
 import {useState,useEffect} from 'react';
 import {Route, Routes, Navigate} from 'react-router-dom';
 import axios from 'axios';
+import {getContacts, getGroups} from './services/ContactServices';
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -18,8 +19,8 @@ const App = () => {
     const fetchContacts = async () => {
       try {
         setIsLoading(true);
-        const {data:contactsData} = await axios.get('http://localhost:3001/contacts');
-        const {data:groupsData} = await axios.get('http://localhost:3001/groups');
+        const {data:contactsData} =await getContacts();
+        const {data:groupsData} =await getGroups();
         setContacts(contactsData);
         setGroups(groupsData);
         setIsLoading(false);
